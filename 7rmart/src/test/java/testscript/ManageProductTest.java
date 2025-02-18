@@ -3,13 +3,14 @@ package testscript;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.ManageProductPage;
 import utility.ExcelUtility.ExcelUtilities;
 
 public class ManageProductTest extends Base {
-	
+@Test
 public void verifyThatProductCanDeleteFromManageproduct() throws IOException {
 		
 		String username=ExcelUtilities.getStringData(1, 0, "login_page");
@@ -22,6 +23,7 @@ public void verifyThatProductCanDeleteFromManageproduct() throws IOException {
 	
 		ManageProductPage manageproduct=new ManageProductPage(driver);
 		manageproduct.clickTheManageProductMoreInfo();
+		manageproduct.clickThedeleteButton();
 		boolean isAlertMessageDispalyed = manageproduct.isAlertDisplayed();
 		Assert.assertTrue(isAlertMessageDispalyed);
 

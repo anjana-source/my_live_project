@@ -9,7 +9,7 @@ import pages.AdminUserPage;
 import pages.LoginPage;
 import utility.ExcelUtility.ExcelUtilities;
 
-public class AdminUserTest extends Base {
+public class AdminUserTest extends Base{
 	@Test
 	public void verifyThatAdminIsAbleToCreateNewUserSuccessfully() throws IOException {
 		//String username = "admin";
@@ -25,6 +25,7 @@ public class AdminUserTest extends Base {
 		
 	String newusername=ExcelUtilities.getStringData(2, 0, "Admin_user");
 	String newpasswords=ExcelUtilities.getStringData(2, 1, "Admin_user");
+	
 		//String newusername = "anuc48o780";
 		//String newpasswords = "acd5e0560908";
 

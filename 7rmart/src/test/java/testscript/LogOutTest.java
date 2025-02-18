@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import pages.LogOutPage;
+
 import pages.LoginPage;
 import utility.ExcelUtility.ExcelUtilities;
 
@@ -20,7 +21,8 @@ public class LogOutTest extends Base {
 		loginpage.enterPassword(passwordvalue);
 		loginpage.clickOnSignInButton();
 		
-		LogOutPage logoutpage= new LogOutPage(driver);
+		LogOutPage logoutpage=new LogOutPage(driver);
+		
 		logoutpage.clickTheAdminicon();
 		logoutpage.clickThelogOut();
 		

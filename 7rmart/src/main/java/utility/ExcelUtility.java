@@ -11,6 +11,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import constants.Constants;
 
+
+
 public class ExcelUtility {
 	public static class ExcelUtilities {
 		static FileInputStream f;
@@ -18,7 +20,7 @@ public class ExcelUtility {
 		static XSSFSheet sh;
 
 		public static String getStringData(int i, int j, String sheet) throws IOException {
-			String filepath = Constants.TESTDATAFILE;
+			String filepath =Constants.TESTDATAFILE;
 			f = new FileInputStream(filepath);
 			wb = new XSSFWorkbook(f);
 			sh = wb.getSheet(sheet);
@@ -28,7 +30,7 @@ public class ExcelUtility {
 		}
 
 		public static String getIntegerData(int i, int j, String sheet) throws IOException {
-			String filepath = Constants.TESTDATAFILE;
+			String filepath =Constants.TESTDATAFILE;
 			f = new FileInputStream(filepath);
 			wb = new XSSFWorkbook(f);
 			sh = wb.getSheet(sheet);
@@ -37,8 +39,5 @@ public class ExcelUtility {
 			int x = (int) c.getNumericCellValue();
 			return String.valueOf(x);
 		}
-		
-
 	}
-
 }
