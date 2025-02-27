@@ -11,7 +11,7 @@ import pages.ManageFooterPage;
 import utility.ExcelUtility.ExcelUtilities;
 
 public class ManageContactTest extends Base{
-	@Test
+	@Test(description="verify That User Able To Change Phone number And Delivery Time")
 	public void verifyThatUserAbleToChangePhonenumberAndDeliveryTime() throws IOException
 	{
 		String username=ExcelUtilities.getStringData(1, 0, "login_page");
@@ -35,10 +35,10 @@ public class ManageContactTest extends Base{
 		managecontact.enterTheDeliveryTime(delivrytime);
 		managecontact.clickUpdateButton();
 		boolean isAlertmessageDisplayed=managecontact.isAlertDisplayed();
-		Assert.assertTrue(isAlertmessageDisplayed);
+		Assert.assertTrue(isAlertmessageDisplayed,"User not Able To Change Phone number And Delivery Time");
 	}
    
-    @Test
+    @Test(description="verify That The Update Button Is Displayed1")
 	public void verifyThatTheUpdateButtonIsDisplayed1() throws IOException {
     	
 		String username=ExcelUtilities.getStringData(1, 0, "login_page");
@@ -55,7 +55,7 @@ public class ManageContactTest extends Base{
 		managecontact.clickTheEditButton();
 		//managecontact.clickUpdateButton();
 		boolean isupdatebuttonEnabled = managecontact.isUpdate_ButtonDisplayed();
-		Assert.assertTrue(isupdatebuttonEnabled);
+		Assert.assertTrue(isupdatebuttonEnabled,"Run testcase again");
 
 	}
 }

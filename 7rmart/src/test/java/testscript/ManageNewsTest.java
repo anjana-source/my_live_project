@@ -10,7 +10,7 @@ import pages.ManageNewsPage;
 import utility.ExcelUtility.ExcelUtilities;
 
 public class ManageNewsTest extends Base {
-	@Test
+	@Test(description="verify That User Can Create News Successfully")
 	public void verifyThatUserCanCreateNewsSuccessfully() throws IOException {
 		//String username = "admin";
 		//String passwordvalue = "admin";
@@ -30,7 +30,7 @@ public class ManageNewsTest extends Base {
 		managenewspage.enterTheNews(news);
 		managenewspage.clickTheSaveButton();
 		boolean isAlertMessageDispalyed = managenewspage.isAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDispalyed);
+		Assert.assertTrue(isAlertMessageDispalyed,"Run testcase again");
 
 	}
 	

@@ -10,7 +10,7 @@ import pages.ManageProductPage;
 import utility.ExcelUtility.ExcelUtilities;
 
 public class ManageProductTest extends Base {
-@Test
+@Test(description="verify That Product Can Delete From Manage product")
 public void verifyThatProductCanDeleteFromManageproduct() throws IOException {
 		
 		String username=ExcelUtilities.getStringData(1, 0, "login_page");
@@ -25,7 +25,7 @@ public void verifyThatProductCanDeleteFromManageproduct() throws IOException {
 		manageproduct.clickTheManageProductMoreInfo();
 		manageproduct.clickThedeleteButton();
 		boolean isAlertMessageDispalyed = manageproduct.isAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDispalyed);
+		Assert.assertTrue(isAlertMessageDispalyed,"Run testcase again");
 
 }
 }

@@ -10,8 +10,8 @@ import utility.ExcelUtility.ExcelUtilities;
 
 public class ManageFooterTest extends Base {
 	
-	@Test
-	public void verifyThatuserIsAbleToUpadatManageFooterSuccessfully() throws IOException {
+	@Test(description="verify That user Is Able To Upadate Manage Footer Successfully")
+	public void verifyThatuserIsAbleToUpadateManageFooterSuccessfully() throws IOException {
 		//String username = "admin";
 		//String passwordvalue = "admin";
 		
@@ -39,10 +39,10 @@ public class ManageFooterTest extends Base {
 		managefooterpage.enterphonenumber(phones);
 		managefooterpage.clickTheUpdateButton();
 		boolean TheAlertBoxisdisplayed=managefooterpage.isAlertDisplayed();
-		Assert.assertTrue(TheAlertBoxisdisplayed);
+		Assert.assertTrue(TheAlertBoxisdisplayed,"Run testcase again");
 
 }
-	@Test
+	@Test(description="verify That The Update Button Is Displayed")
 	public void verifyThatTheUpdateButtonIsDisplayed() throws IOException {
 		//String username = "admin";
 		//String passwordvalue = "admin";
@@ -60,9 +60,8 @@ public class ManageFooterTest extends Base {
 		managefooterpage.clickTheActionButton();
 		managefooterpage.isUpdatebuttonDisplayed();
 		boolean isupdateButtonDispalyed = managefooterpage.isUpdatebuttonDisplayed();
-		Assert.assertTrue(isupdateButtonDispalyed);
+		Assert.assertTrue(isupdateButtonDispalyed,"Run testcase again");
 
 	}
-
 
 }

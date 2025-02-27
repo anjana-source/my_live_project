@@ -13,6 +13,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import constants.Constants;
+import utility.FileUploadUtility;
+import utility.PageUtility;
+
 public class ManageSubCategoryPage {
 	WebDriver driver;
 
@@ -44,8 +48,12 @@ public class ManageSubCategoryPage {
 	}
 
 	public void selectcategory_Dropdown(){
+		/*
 	 Select select=new Select(category);
 	 select.selectByVisibleText("Fresh_fruits");
+	 */
+		PageUtility pageutility=new PageUtility();
+		pageutility.selectByVisibleText(category,"Fresh_fruits");
 	
 	}
 	public void enterSubcategory(String subcategory){
@@ -53,27 +61,22 @@ public class ManageSubCategoryPage {
 			
 	}
 	
-	public void uploadTheImage() throws AWTException{
+	public void uploadTheImage() throws AWTException {
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
 		js.executeScript("arguments[0].click();", image_upload);
-		//image_upload.click();
-		   StringSelection s=new StringSelection("C:\\Users\\HP\\Downloads\\appl");
-		   
-		   Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s,null);
-		   Robot R=new Robot();
-		   R.delay(2500);
-		//   R.keyPress(KeyEvent.VK_ENTER);
-		 //  R.keyRelease(KeyEvent.VK_ENTER);
-		   R.keyPress(KeyEvent.VK_CONTROL);
-		   R.keyPress(KeyEvent.VK_V);
-		   R.keyRelease(KeyEvent.VK_CONTROL);
-		   R.keyRelease(KeyEvent.VK_V);
-			R.keyPress(KeyEvent.VK_ENTER);
-			R.keyRelease(KeyEvent.VK_ENTER);
-
 		
+		FileUploadUtility fileuploadutility_sendkeys=new FileUploadUtility();
+		
+		fileuploadutility_sendkeys.fileUploadUsingRobotClass(image_upload, Constants.APPLEIMAGE);
+		
+		/*
+		FileUploadUtility fileuploadutilityRobot=new FileUploadUtility();
+		
+		fileuploadutilityRobot.fileUploadUsingRobotClass(image_upload, Constants.APPLEIMAGE);
+		
+		*/
 	}
 		
 	public void clickTheSaveButton() {
@@ -84,8 +87,6 @@ public class ManageSubCategoryPage {
 		return Green_alertbox.isDisplayed();
 		
 	}
-	
-		
 	
 }
 

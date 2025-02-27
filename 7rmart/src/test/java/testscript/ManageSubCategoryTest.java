@@ -12,8 +12,8 @@ import utility.ExcelUtility.ExcelUtilities;
 
 
 public class ManageSubCategoryTest extends Base {
-@Test	
-public void verifyThatManageCategorycandelete() throws IOException, AWTException {
+@Test(description="verify That Manage SubCategory can uplaod File")
+public void verifyThatManageSubCategorycanuplaodFile() throws IOException, AWTException {
 		
 		String username=ExcelUtilities.getStringData(1, 0, "login_page");
 		String passwordvalue=ExcelUtilities.getStringData(1, 1, "login_page");
@@ -34,7 +34,7 @@ public void verifyThatManageCategorycandelete() throws IOException, AWTException
 		managesubcategorypage.uploadTheImage();
 		managesubcategorypage.clickTheSaveButton();
 		boolean isGreenalertmessageDispalyed=managesubcategorypage.isGreenAlertboxDispalyed();
-		Assert.assertTrue(isGreenalertmessageDispalyed);
+		Assert.assertTrue(isGreenalertmessageDispalyed,"Run testcase again");
 		
 
 }

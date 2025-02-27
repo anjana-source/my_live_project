@@ -16,6 +16,9 @@ public class LogOutPage {
 	
 	@FindBy(xpath="//a[@class='nav-link' and @data-toggle='dropdown']")private WebElement admin;
 		@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']")private WebElement logout;
+		@FindBy(xpath="//button[@type='submit']")private WebElement login_screen;
+
+		
 	public void clickTheAdminicon()
 	{
 		admin.click();
@@ -25,7 +28,12 @@ public class LogOutPage {
 		logout.click();
 		
 	}
-
+	
+  public boolean loginScreen()
+  {
+	return login_screen.isDisplayed();
+	  
+  }
 	
 	
 	
