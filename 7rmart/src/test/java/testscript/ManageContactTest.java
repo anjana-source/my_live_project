@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageContactPage;
 import pages.ManageFooterPage;
@@ -29,13 +30,13 @@ public class ManageContactTest extends Base{
 		loginpage.clickOnSignInButton();
 		
 		ManageContactPage managecontact=new ManageContactPage(driver);
-		managecontact.clickTheManageContactMoreinfo();
+		managecontact.clickTheManageContact();
 		managecontact.clickTheEditButton();
 		managecontact.enterThePhoneNumber(phoneno);
 		managecontact.enterTheDeliveryTime(delivrytime);
 		managecontact.clickUpdateButton();
 		boolean isAlertmessageDisplayed=managecontact.isAlertDisplayed();
-		Assert.assertTrue(isAlertmessageDisplayed,"User not Able To Change Phone number And Delivery Time");
+		Assert.assertTrue(isAlertmessageDisplayed,Constants.MANAGECONATCT);
 	}
    
     @Test(description="verify That The Update Button Is Displayed1")
@@ -51,11 +52,11 @@ public class ManageContactTest extends Base{
 		loginpage.clickOnSignInButton();
 		
 		ManageContactPage managecontact=new ManageContactPage(driver);
-		managecontact.clickTheManageContactMoreinfo();
+		managecontact.clickTheManageContact();
 		managecontact.clickTheEditButton();
 		//managecontact.clickUpdateButton();
 		boolean isupdatebuttonEnabled = managecontact.isUpdate_ButtonDisplayed();
-		Assert.assertTrue(isupdatebuttonEnabled,"Run testcase again");
+		Assert.assertTrue(isupdatebuttonEnabled,Constants.UPDATEBUTTON);
 
 	}
 }

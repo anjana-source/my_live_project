@@ -26,7 +26,7 @@ public class ManageProductPage {
 		manage_product_info.click();
 	}
 
-	public void clickThedeleteButton() {
+	public void clickTheDeleteButton() {
 		deletebutton.click();
 		driver.switchTo().alert().accept();
 	}

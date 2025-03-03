@@ -19,17 +19,17 @@ public class LogOutPage {
 		@FindBy(xpath="//button[@type='submit']")private WebElement login_screen;
 
 		
-	public void clickTheAdminicon()
+	public void clickTheAdminIcon()
 	{
 		admin.click();
 	}
-	public void clickThelogOut()
+	public void clickTheLogOut()
 	{
 		logout.click();
 		
 	}
 	
-  public boolean loginScreen()
+  public boolean isLoginPageVisible()
   {
 	return login_screen.isDisplayed();
 	  

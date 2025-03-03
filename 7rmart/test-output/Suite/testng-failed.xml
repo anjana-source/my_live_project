@@ -7,13 +7,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testscript.AdminUserTest">
+      <class name="testscript.ManageSubCategoryTest">
         <methods>
           <include name="initaialBrowser"/>
-          <include name="verifyThatTheSaveButtonIsDisplayed"/>
+          <include name="verifyThatManageSubCategorycanuplaodFile"/>
           <include name="browserQuit"/>
         </methods>
-      </class> <!-- testscript.AdminUserTest -->
+      </class> <!-- testscript.ManageSubCategoryTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

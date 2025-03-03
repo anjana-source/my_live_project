@@ -20,7 +20,7 @@ import utility.PageUtility;
 public class ManageSubCategoryPage {
 	WebDriver driver;
 
-	public ManageSubCategoryPage(WebDriver driver) {
+	public  ManageSubCategoryPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -47,7 +47,7 @@ public class ManageSubCategoryPage {
 		newbutton.click();
 	}
 
-	public void selectcategory_Dropdown(){
+	public void selectCategory_Dropdown(){
 		/*
 	 Select select=new Select(category);
 	 select.selectByVisibleText("Fresh_fruits");
@@ -56,27 +56,30 @@ public class ManageSubCategoryPage {
 		pageutility.selectByVisibleText(category,"Fresh_fruits");
 	
 	}
-	public void enterSubcategory(String subcategory){
+	public void enterSubCategory(String subcategory){
 		sub_category.sendKeys(subcategory);
 			
 	}
 	
 	public void uploadTheImage() throws AWTException {
 		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+//	JavascriptExecutor js = (JavascriptExecutor) driver;
 		
-		js.executeScript("arguments[0].click();", image_upload);
+	//js.executeScript("arguments[0].click();", image_upload);
 		
-		FileUploadUtility fileuploadutility_sendkeys=new FileUploadUtility();
+		PageUtility pageutility=new PageUtility();
+		pageutility.JavascriptExecutor(driver,image_upload );
 		
-		fileuploadutility_sendkeys.fileUploadUsingRobotClass(image_upload, Constants.APPLEIMAGE);
+		//FileUploadUtility fileuploadutility_sendkeys=new FileUploadUtility();
 		
-		/*
+		//fileuploadutility_sendkeys.fileUploadUsingRobotClass(image_upload, Constants.APPLEIMAGE);
+		
+		
 		FileUploadUtility fileuploadutilityRobot=new FileUploadUtility();
 		
 		fileuploadutilityRobot.fileUploadUsingRobotClass(image_upload, Constants.APPLEIMAGE);
 		
-		*/
+	
 	}
 		
 	public void clickTheSaveButton() {

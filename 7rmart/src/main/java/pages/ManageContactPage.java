@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utility.PageUtility;
+
 public class ManageContactPage {
 	WebDriver driver;
 	
@@ -29,7 +31,7 @@ public class ManageContactPage {
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
 	private WebElement greenAlertbox;
 	
-	public void clickTheManageContactMoreinfo()
+	public void clickTheManageContact()
 	{
 		managecontact.click();
 	}
@@ -52,10 +54,12 @@ public class ManageContactPage {
 	}
 	public void clickUpdateButton()
 	{
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
 	
-		js.executeScript("arguments[0].click();", update_button);
+	//	js.executeScript("arguments[0].click();", update_button);
 		//update_button.click();
+		PageUtility pageutility=new PageUtility();
+		pageutility.JavascriptExecutor(driver,update_button );
 		
 	}
 	

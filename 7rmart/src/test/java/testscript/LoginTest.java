@@ -34,7 +34,7 @@ public class LoginTest extends Base {
 		loginpage.enterPassword(passwordvalue);
 		loginpage.clickOnSignInButton();
 		boolean isAlertMessageDisplayed=loginpage.isAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed,Constants.VALIDCREDENTIALS);
+		Assert.assertTrue(isAlertMessageDisplayed,Constants.INVALIDCREDENTIALS);
 		
 	}
 	@Test(description="verify The User Is Able To Using Invalid Username Valid password")
@@ -48,7 +48,7 @@ public class LoginTest extends Base {
 		loginpage.enterPassword(passwordvalue);
 		loginpage.clickOnSignInButton();
 		boolean isAlertMessageDisplayed=loginpage.isAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed,Constants.VALIDCREDENTIALS);
+		Assert.assertTrue(isAlertMessageDisplayed,Constants.INVALIDCREDENTIALS);
 		
 	}
 	@Test(description="verify The User Is Able To Using Invalid Username Invalid password")
@@ -63,7 +63,7 @@ public class LoginTest extends Base {
 		loginpage.enterPassword(passwordvalue);
 		loginpage.clickOnSignInButton();
 		boolean isAlertMessageDisplayed=loginpage.isAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed,Constants.VALIDCREDENTIALS);
+		Assert.assertTrue(isAlertMessageDisplayed,Constants.INVALIDCREDENTIALS);
 		
 	}
 

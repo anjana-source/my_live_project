@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageFooterPage;
 import utility.ExcelUtility.ExcelUtilities;
@@ -39,7 +41,7 @@ public class ManageFooterTest extends Base {
 		managefooterpage.enterphonenumber(phones);
 		managefooterpage.clickTheUpdateButton();
 		boolean TheAlertBoxisdisplayed=managefooterpage.isAlertDisplayed();
-		Assert.assertTrue(TheAlertBoxisdisplayed,"Run testcase again");
+		Assert.assertTrue(TheAlertBoxisdisplayed,Constants.MANAGEFOOTER);
 
 }
 	@Test(description="verify That The Update Button Is Displayed")
@@ -60,7 +62,7 @@ public class ManageFooterTest extends Base {
 		managefooterpage.clickTheActionButton();
 		managefooterpage.isUpdatebuttonDisplayed();
 		boolean isupdateButtonDispalyed = managefooterpage.isUpdatebuttonDisplayed();
-		Assert.assertTrue(isupdateButtonDispalyed,"Run testcase again");
+		Assert.assertTrue(isupdateButtonDispalyed,Constants.UPDATEBUTTON);
 
 	}
 

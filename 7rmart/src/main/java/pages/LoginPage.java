@@ -44,12 +44,12 @@ public class LoginPage {
 		password.sendKeys(passwordvalue);
 
 	}
-
 	public void clickOnSignInButton() {
-		/*
-		 * WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); //
-		 * explicit wait wait.until(ExpectedConditions.elementToBeClickable(submit));
-		 * submit.click();
+		/* //explicit
+		
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); //explicit
+		 explicit wait wait.until(ExpectedConditions.elementToBeClickable(submit));
+		  submit.click();
 		 */
 		/*
 		 * Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)

@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utility.ExcelUtility.ExcelUtilities;
@@ -30,7 +31,7 @@ public class ManageNewsTest extends Base {
 		managenewspage.enterTheNews(news);
 		managenewspage.clickTheSaveButton();
 		boolean isAlertMessageDispalyed = managenewspage.isAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDispalyed,"Run testcase again");
+		Assert.assertTrue(isAlertMessageDispalyed,Constants.MANAGENEWS);
 
 	}
 	

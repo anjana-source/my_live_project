@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utility.PageUtility;
+
 
 public class AdminUserPage {
 	WebDriver driver;
@@ -47,8 +49,11 @@ public class AdminUserPage {
 	}
 
 	public void selectUserType() {
-	Select select = new Select(usertype);
-	select.selectByVisibleText("Staff");
+		
+	//Select select = new Select(usertype);
+	//select.selectByVisibleText("Staff");
+		PageUtility pageutility=new PageUtility();
+		pageutility.selectByVisibleText(usertype,"Staff");
 
 	}
 

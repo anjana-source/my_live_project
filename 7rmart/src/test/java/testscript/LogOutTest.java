@@ -24,9 +24,9 @@ public class LogOutTest extends Base {
 		loginpage.clickOnSignInButton();
 		
 		LogOutPage logoutpage=new LogOutPage(driver);
-		logoutpage.clickTheAdminicon();
-		logoutpage.clickThelogOut();
-		boolean verifyingThatLogoutSuccessfull=logoutpage.loginScreen();
+		logoutpage.clickTheAdminIcon();
+		logoutpage.clickTheLogOut();
+		boolean verifyingThatLogoutSuccessfull=logoutpage.isLoginPageVisible();
 		Assert.assertTrue(verifyingThatLogoutSuccessfull,Constants.LOGOUT);
 		
 	}

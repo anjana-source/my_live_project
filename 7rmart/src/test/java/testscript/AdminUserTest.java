@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.AdminUserPage;
 import pages.LoginPage;
 import utility.ExcelUtility.ExcelUtilities;
@@ -40,7 +41,7 @@ public class AdminUserTest extends Base {
 		adminuserpage.selectUserType();
 		adminuserpage.clickTheSaveButton();
 		boolean isAlertMessageDispalyed = adminuserpage.isAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDispalyed,"Admin Is not Able To Create New User");
+		Assert.assertTrue(isAlertMessageDispalyed,Constants.ADMINUSER);
 
 	}
 
@@ -61,7 +62,7 @@ public class AdminUserTest extends Base {
 		adminuserpage.clickTheAdminUserNewButton();
 		adminuserpage.isSaveButtonDisplayed();
 		boolean isAlertMessageDispalyed = adminuserpage.isSaveButtonDisplayed();
-		Assert.assertTrue(isAlertMessageDispalyed,"Ensure That The Save Button Is Displayed");
+		Assert.assertTrue(isAlertMessageDispalyed,Constants.UPDATEBUTTON);
 
 	}
 

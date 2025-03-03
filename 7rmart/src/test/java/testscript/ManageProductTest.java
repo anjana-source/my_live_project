@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageProductPage;
 import utility.ExcelUtility.ExcelUtilities;
@@ -23,9 +24,9 @@ public void verifyThatProductCanDeleteFromManageproduct() throws IOException {
 	
 		ManageProductPage manageproduct=new ManageProductPage(driver);
 		manageproduct.clickTheManageProductMoreInfo();
-		manageproduct.clickThedeleteButton();
+		manageproduct.clickTheDeleteButton();
 		boolean isAlertMessageDispalyed = manageproduct.isAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDispalyed,"Run testcase again");
+		Assert.assertTrue(isAlertMessageDispalyed,Constants.MANAGEPRODUCT);
 
 }
 }
