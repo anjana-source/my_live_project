@@ -38,30 +38,34 @@ public class ManageSubCategoryPage {
 	private WebElement savebutton;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement Green_alertbox;
-
+/*
 	public void clickTheSubCategoryMoreInfo() {
 		moreinfo.click();
 	}
+	*/
 
-	public void clickTheNew_Button() {
+	public ManageSubCategoryPage clickTheNew_Button() {
 		newbutton.click();
+		return this;
 	}
 
-	public void selectCategory_Dropdown(){
+	public ManageSubCategoryPage selectCategory_Dropdown(){
 		/*
 	 Select select=new Select(category);
 	 select.selectByVisibleText("Fresh_fruits");
 	 */
 		PageUtility pageutility=new PageUtility();
 		pageutility.selectByVisibleText(category,"Fresh_fruits");
+		return this;
 	
 	}
-	public void enterSubCategory(String subcategory){
+	public ManageSubCategoryPage enterSubCategory(String subcategory){
 		sub_category.sendKeys(subcategory);
+		return this;
 			
 	}
 	
-	public void uploadTheImage() throws AWTException {
+	public ManageSubCategoryPage uploadTheImage() throws AWTException {
 		
 //	JavascriptExecutor js = (JavascriptExecutor) driver;
 		
@@ -78,12 +82,14 @@ public class ManageSubCategoryPage {
 		FileUploadUtility fileuploadutilityRobot=new FileUploadUtility();
 		
 		fileuploadutilityRobot.fileUploadUsingRobotClass(image_upload, Constants.APPLEIMAGE);
+		return this;
 		
 	
 	}
 		
-	public void clickTheSaveButton() {
+	public ManageSubCategoryPage clickTheSaveButton() {
 		savebutton.click();
+		return this;
 	}
 	public boolean isGreenAlertboxDispalyed()
 	{

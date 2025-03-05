@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-03T15:22:34 IST" name="Suite" finished-at="2025-03-03T15:22:43 IST" duration-ms="9339">
+  <suite started-at="2025-03-04T21:58:08 IST" name="Suite" finished-at="2025-03-04T21:58:21 IST" duration-ms="13101">
     <groups>
     </groups>
-    <test started-at="2025-03-03T15:22:34 IST" name="Test" finished-at="2025-03-03T15:22:43 IST" duration-ms="9339">
+    <test started-at="2025-03-04T21:58:08 IST" name="Test" finished-at="2025-03-04T21:58:21 IST" duration-ms="13101">
       <class name="testscript.ManageSubCategoryTest">
-        <test-method is-config="true" signature="initaialBrowser(java.lang.String)[pri:0, instance:testscript.ManageSubCategoryTest@63fbfaeb]" started-at="2025-03-03T15:22:34 IST" name="initaialBrowser" finished-at="2025-03-03T15:22:37 IST" duration-ms="3014" status="PASS">
+        <test-method is-config="true" signature="initaialBrowser(java.lang.String)[pri:0, instance:testscript.ManageSubCategoryTest@63fbfaeb]" started-at="2025-03-04T21:58:08 IST" name="initaialBrowser" finished-at="2025-03-04T21:58:12 IST" duration-ms="3796" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initaialBrowser -->
-        <test-method signature="verifyThatManageSubCategorycanuplaodFile()[pri:0, instance:testscript.ManageSubCategoryTest@63fbfaeb]" started-at="2025-03-03T15:22:37 IST" name="verifyThatManageSubCategorycanuplaodFile" description="verify That Manage SubCategory can uplaod File" finished-at="2025-03-03T15:22:43 IST" duration-ms="6090" status="PASS">
+        <test-method signature="verifyThatManageSubCategorycanuplaodFile()[pri:0, instance:testscript.ManageSubCategoryTest@63fbfaeb]" started-at="2025-03-04T21:58:12 IST" name="verifyThatManageSubCategorycanuplaodFile" description="verify That Manage SubCategory can uplaod File" finished-at="2025-03-04T21:58:21 IST" duration-ms="8894" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyThatManageSubCategorycanuplaodFile -->
-        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageSubCategoryTest@63fbfaeb]" started-at="2025-03-03T15:22:43 IST" name="browserQuit" finished-at="2025-03-03T15:22:43 IST" duration-ms="194" status="PASS">
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageSubCategoryTest@63fbfaeb]" started-at="2025-03-04T21:58:21 IST" name="browserQuit" finished-at="2025-03-04T21:58:21 IST" duration-ms="367" status="PASS">
           <params>
             <param index="0">
               <value>

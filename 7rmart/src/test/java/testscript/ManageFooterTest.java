@@ -6,12 +6,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import pages.LogOutPage;
 import pages.LoginPage;
+import pages.ManageContactPage;
 import pages.ManageFooterPage;
 import utility.ExcelUtility.ExcelUtilities;
 
 public class ManageFooterTest extends Base {
-	
+	LogOutPage logoutpage;
+	ManageFooterPage managefooterpage;
 	@Test(description="verify That user Is Able To Upadate Manage Footer Successfully")
 	public void verifyThatuserIsAbleToUpadateManageFooterSuccessfully() throws IOException {
 		//String username = "admin";
@@ -25,13 +28,11 @@ public class ManageFooterTest extends Base {
 	     String phones=ExcelUtilities.getIntegerData(1, 2, "Manage_footer");
 		
 		//String phones="90876566";
+	     /*
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username);
 		loginpage.enterPassword(passwordvalue);
 		loginpage.clickOnSignInButton();
-		
-		
-		
 		
 		ManageFooterPage managefooterpage= new ManageFooterPage(driver);
 		managefooterpage.clickTheManagefooterTextMoreInfo();
@@ -42,6 +43,23 @@ public class ManageFooterTest extends Base {
 		managefooterpage.clickTheUpdateButton();
 		boolean TheAlertBoxisdisplayed=managefooterpage.isAlertDisplayed();
 		Assert.assertTrue(TheAlertBoxisdisplayed,Constants.MANAGEFOOTER);
+		*/
+	     
+	     LoginPage loginpage = new LoginPage(driver);
+			loginpage.enterUserName(username).enterPassword(passwordvalue);
+			logoutpage = loginpage.clickOnSignInButton();
+			managefooterpage=logoutpage.clickTheManagefooterTextMoreInfo();
+			managefooterpage.clickTheActionButton();
+			managefooterpage.clearandenteraddress(addressname);
+			managefooterpage.enterEmail(emails);
+			managefooterpage.enterphonenumber(phones);
+			managefooterpage.clickTheUpdateButton();
+			boolean TheAlertBoxisdisplayed=managefooterpage.isAlertDisplayed();
+			Assert.assertTrue(TheAlertBoxisdisplayed,Constants.MANAGEFOOTER);
+			
+			
+	     
+	     
 
 }
 	@Test(description="verify That The Update Button Is Displayed")
@@ -50,8 +68,7 @@ public class ManageFooterTest extends Base {
 		//String passwordvalue = "admin";
 		String username=ExcelUtilities.getStringData(1, 0, "login_page");
 		String passwordvalue=ExcelUtilities.getStringData(1, 1, "login_page");
-		
-
+		/*
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username);
 		loginpage.enterPassword(passwordvalue);
@@ -63,7 +80,16 @@ public class ManageFooterTest extends Base {
 		managefooterpage.isUpdatebuttonDisplayed();
 		boolean isupdateButtonDispalyed = managefooterpage.isUpdatebuttonDisplayed();
 		Assert.assertTrue(isupdateButtonDispalyed,Constants.UPDATEBUTTON);
-
+*/
+		  
+	     LoginPage loginpage = new LoginPage(driver);
+			loginpage.enterUserName(username).enterPassword(passwordvalue);
+			logoutpage = loginpage.clickOnSignInButton();
+			managefooterpage=logoutpage.clickTheManagefooterTextMoreInfo();
+			managefooterpage.clickTheActionButton();
+			managefooterpage.isUpdatebuttonDisplayed();
+			boolean isupdateButtonDispalyed = managefooterpage.isUpdatebuttonDisplayed();
+			Assert.assertTrue(isupdateButtonDispalyed,Constants.UPDATEBUTTON);
 	}
 
 }

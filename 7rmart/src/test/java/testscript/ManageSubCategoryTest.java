@@ -7,13 +7,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import pages.LogOutPage;
 import pages.LoginPage;
+import pages.ManageProductPage;
 import pages.ManageSubCategoryPage;
 import utility.FakerUtility;
 import utility.ExcelUtility.ExcelUtilities;
 
 
 public class ManageSubCategoryTest extends Base {
+	LogOutPage logoutpage;
+	ManageSubCategoryPage managesubcategorypage;
 @Test(description="verify That Manage SubCategory can uplaod File")
 public void verifyThatManageSubCategorycanuplaodFile() throws IOException, AWTException {
 		
@@ -24,8 +28,7 @@ public void verifyThatManageSubCategorycanuplaodFile() throws IOException, AWTEx
 		
 		FakerUtility fakerutility = new FakerUtility();
 		String subcategory1 = fakerutility.creatARandomFirstName();
-		
-		
+		/*
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserName(username);
 		loginpage.enterPassword(passwordvalue);
@@ -40,6 +43,13 @@ public void verifyThatManageSubCategorycanuplaodFile() throws IOException, AWTEx
 		managesubcategorypage.clickTheSaveButton();
 		boolean isGreenalertmessageDispalyed=managesubcategorypage.isGreenAlertboxDispalyed();
 		Assert.assertTrue(isGreenalertmessageDispalyed,Constants.MANAGESUBCATEGORY);
-		
+		*/
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterUserName(username).enterPassword(passwordvalue);
+		logoutpage = loginpage.clickOnSignInButton();
+		managesubcategorypage=logoutpage.clickTheSubCategoryMoreInfo();
+		managesubcategorypage.clickTheNew_Button().selectCategory_Dropdown().enterSubCategory(subcategory1).uploadTheImage().clickTheSaveButton();
+		boolean isGreenalertmessageDispalyed=managesubcategorypage.isGreenAlertboxDispalyed();
+		Assert.assertTrue(isGreenalertmessageDispalyed,Constants.MANAGESUBCATEGORY);
 }
 }

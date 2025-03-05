@@ -30,10 +30,11 @@ public class ManageFooterPage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alertbox;
 
-
-public void clickTheManagefooterTextMoreInfo() {
+/*
+public ManageFooterPage clickTheManagefooterTextMoreInfo() {
 	managefooterext.click();
 }
+*/
 
 public void clickTheActionButton() {
 	actionbutton.click();

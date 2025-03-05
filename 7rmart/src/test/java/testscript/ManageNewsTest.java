@@ -6,11 +6,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import pages.LogOutPage;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utility.ExcelUtility.ExcelUtilities;
 
 public class ManageNewsTest extends Base {
+	LogOutPage logoutpage;
+	ManageNewsPage managenewspage1;
+	
 	@Test(description="verify That User Can Create News Successfully")
 	public void verifyThatUserCanCreateNewsSuccessfully() throws IOException {
 		//String username = "admin";
@@ -21,16 +25,21 @@ public class ManageNewsTest extends Base {
 		//String news = "automation testing";
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserName(username);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.clickOnSignInButton();
+		loginpage.enterUserName(username).enterPassword(passwordvalue);  // 
+		logoutpage= loginpage.clickOnSignInButton();
+				//loginpage.enterPassword(passwordvalue);
 
-		ManageNewsPage managenewspage = new ManageNewsPage(driver);
-		managenewspage.clickTheManageNewsInfo();
-		managenewspage.clickTheManageNewsNewButton();
-		managenewspage.enterTheNews(news);
-		managenewspage.clickTheSaveButton();
-		boolean isAlertMessageDispalyed = managenewspage.isAlertDisplayed();
+
+		//ManageNewsPage managenewspage = new ManageNewsPage(driver);
+	//	managenewspage.clickTheManageNewsInfo();
+		//logoutpage.clickTheManageNewsInfo();
+		
+		managenewspage1=logoutpage.clickTheManageNewsInfo();
+		
+		managenewspage1.clickTheManageNewsNewButton().enterTheNews(news).clickTheSaveButton();
+		//managenewspage.enterTheNews(news);
+		//managenewspage.clickTheSaveButton();
+		boolean isAlertMessageDispalyed = managenewspage1.isAlertDisplayed();
 		Assert.assertTrue(isAlertMessageDispalyed,Constants.MANAGENEWS);
 
 	}
